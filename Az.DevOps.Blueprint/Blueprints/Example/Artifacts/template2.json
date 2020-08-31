@@ -1,0 +1,28 @@
+{
+    "kind": "template",
+    "properties": {
+        "displayName": "Example Template Secure String Parameters",
+        "description": "",
+        "dependsOn": ["template1"],
+        "template": {
+            "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+            "contentVersion": "1.0.0.0",
+            "parameters": {
+                "secure_string": {
+                    "type": "securestring",
+                    "metadata": {
+                        "description": "Example Parameter that will be populated using a Blueprint Parameter when the Blueprint is Assigned"
+                    }
+                }
+            },
+            "variables": {},
+            "resources": []
+        },
+        "resourceGroup": "resource_test",
+        "parameters": {
+            "secure_string": {
+                "value": "[parameters('template2_secure_string')]"
+            }
+        }
+    }
+}

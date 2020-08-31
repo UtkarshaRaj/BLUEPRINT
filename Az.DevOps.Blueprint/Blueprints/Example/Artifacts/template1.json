@@ -1,0 +1,46 @@
+{
+    "kind": "template",
+    "properties": {
+        "displayName": "Example Template String Parameters",
+        "description": "",
+        "dependsOn": [],
+        "template": {
+            "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+            "contentVersion": "1.0.0.0",
+            "parameters": {
+                "default_string": {
+                    "type": "string",
+                    "metadata": {
+                        "description": "Example Parameter that will be populated using a Blueprint Parameter that has a Default Value"
+                    }
+                },
+                "override_string": {
+                    "type": "string",
+                    "metadata": {
+                        "description": "Example Parameter that will be populated using a Blueprint Parameter that has a Default Value, but will be overriden when the Blueprint is Assigned"
+                    }
+                },
+                "string": {
+                    "type": "string",
+                    "metadata": {
+                        "description": "Example Parameter that will be populated using a Blueprint Parameter when the Blueprint is Assigned"
+                    }
+                }
+            },
+            "variables": {},
+            "resources": []
+        },
+        "resourceGroup": "resource_default_test",
+        "parameters": {
+            "default_string": {
+                "value": "[parameters('template1_default_string')]"
+            },
+            "override_string": {
+                "value": "[parameters('template1_override_string')]"
+            },
+            "string": {
+                "value": "[parameters('template1_string')]"
+            }
+        }
+    }
+}
